@@ -8,10 +8,10 @@ print(dfs)
 przerobione = dfs['Przerobione']['id']
 losowe_znaczki = []
 while len(losowe_znaczki) < 5:
-    znaczek = random.randint(1, 1200)
+    znaczek = random.randint(2, 1201)
     if znaczek not in przerobione:
-        losowe_znaczki.append([znaczek, dfs['baza']['Chinese'][znaczek], dfs['baza']['Pinyin'][znaczek],
-                               dfs['baza']['English'][znaczek]])
+        losowe_znaczki.append([znaczek, dfs['baza']['Chinese'][znaczek-2], dfs['baza']['Pinyin'][znaczek-2],
+                               dfs['baza']['English'][znaczek-2]])
         print('losowe znaczki len to ' + str(len(losowe_znaczki)))
 
 losowy_df = pd.DataFrame(losowe_znaczki, columns=dfs['Przerobione'].columns)
